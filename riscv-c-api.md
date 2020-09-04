@@ -42,14 +42,15 @@ https://creativecommons.org/licenses/by/4.0/.
 | __riscv_atomic      | 1     | `A` extension is available.   |
 | __riscv_compressed  | 1     | `C` extension is available.   |
 | __riscv_mul         | 1     | `M` extension is available.   |
-| __riscv_div         | 1     | `M` extension is available.   |
-| __riscv_muldiv      | 1     | `M` extension is available.   |
-| __riscv_fdiv        | 1     | `F` extension is available.   |
-| __riscv_fsqrt       | 1     | `F` extension is available.   |
+| __riscv_div         | 1     | `M` extension is available and `-mno-div` is not given.*[1]    |
+| __riscv_muldiv      | 1     | `M` extension is available and `-mno-div` is not given.*[1]    |
+| __riscv_fdiv        | 1     | `F` extension is available and `-mno-fdiv` is not given.*[1]   |
+| __riscv_fsqrt       | 1     | `F` extension is available and `-mno-fdiv` is not given.*[1]   |
 | __riscv_vector      | 1     | `V` extension is available.   |
 | __riscv_bitmanip    | 1     | `B` extension is available.   |
 | __riscv_zfh         | 1     | `Zfh` extension is available. |
 
+*[1] Not all compiler provide `-mno-div` and `-mno-fdiv` option.
 
 ### ABI Related Preprocessor Definitions
 
@@ -67,6 +68,12 @@ https://creativecommons.org/licenses/by/4.0/.
 | --------------------- | -------- | ------------------------------------- |
 | __riscv_cmodel_medlow | 1        | Defined if using `medlow` code model. |
 | __riscv_cmodel_medany | 1        | Defined if using `medany` code model. |
+
+### Deprecated Preprocessor Definitions
+
+| Name                  | Value    | When defined                          | Alternative |
+| --------------------- | -------- | ------------------------------------- |             |
+| __riscv_cmodel_pic    | 1        | GCC will defined that when program compile with -fPIC, -fpic, -fPIE or -fpie. | `__PIC__` or `__PIE__` |
 
 ## Function Attributes
 
