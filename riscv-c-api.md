@@ -67,7 +67,6 @@ https://creativecommons.org/licenses/by/4.0/.
 | --------------------- | -------- | ------------------------------------- |
 | __riscv_cmodel_medlow | 1        | Defined if using `medlow` code model. |
 | __riscv_cmodel_medany | 1        | Defined if using `medany` code model. |
-| __riscv_cmodel_pic    | 1        | Defined if using `PIC` code model.    |
 
 ## Function Attributes
 
